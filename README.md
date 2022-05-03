@@ -4,7 +4,9 @@ Step 6: Use an Alternative ML Model and Evaluate Strategy Returns
 
 In this section, you’ll tune, or adjust, the model’s input features to find the parameters that result in the best trading outcomes. You’ll choose the best by comparing the cumulative products of the strategy returns.
 
-![The orginal baseline model 90 Days of training](images/svm_small_training.png "Baseline SVM Model")
+![The orginal baseline model 90 Days of training](images/svm_small_training_baseline.png "Baseline SVM Model")
+
+![The Increase Training to 80 20]('images/svm_80_20_training_baseline.png' "80/20 Training/Testing SVM Model")
 
 Step 1: Tune the training algorithm by adjusting the size of the training dataset.
 
