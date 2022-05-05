@@ -4,18 +4,29 @@ Step 6: Use an Alternative ML Model and Evaluate Strategy Returns
 
 In this section, you’ll tune, or adjust, the model’s input features to find the parameters that result in the best trading outcomes. You’ll choose the best by comparing the cumulative products of the strategy returns.
 
+##1
 
 ![](images/svm_small_training_baseline.png)  
 
-![]('images/svm_80_20_training_baseline.png')  
+##2
 
-![]('images/svm_golden_cross_dmac.png')  
+![](images/svm_80_20_training_baseline.png)  
 
-![]('images/svm_15_30_dmac.png')  
+##3
 
-![]('images/lr_5_10_dmac.png')  
+![](images/svm_golden_cross_dmac.png)  
 
-![]('images/svm_5_10_dmac.png')  
+##4
+
+![](images/svm_15_30_dmac.png)  
+
+##5
+
+![](images/lr_5_10_dmac.png)  
+
+##6
+
+![](images/svm_5_10_dmac.png)  
 
 
 
