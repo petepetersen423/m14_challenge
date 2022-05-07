@@ -1,50 +1,40 @@
-Tune the Baseline Trading Algorithm
-Step 6: Use an Alternative ML Model and Evaluate Strategy Returns
+# Module 14 Challenge
+## Pete Petersen
+05/06/2022
+
+### Answer the following question: What impact resulted from increasing or decreasing the training window?
+
+The strategy culmulative performance was reduced from 153% to 131% when the training window was increased to 36 months.  The baseline model was too sensitive to handle long term trends.
 
 
-In this section, you’ll tune, or adjust, the model’s input features to find the parameters that result in the best trading outcomes. You’ll choose the best by comparing the cumulative products of the strategy returns.
+### Answer the following question: What impact resulted from increasing or decreasing either or both of the SMA windows?
 
-##1
+Ultimately, I chose to make the short window a little less sensitive by on increasing the moving average from 4 to 5 to achieve 
+174%. I also increased the averages to the 50/200, but the that decresead performance to 131%.
+
+Overall, the SVM fails to predict the sell signal when it has learned much of the weight from the major uptrend in the data.  For that reason I modified the C parameter to 3 to force the algorithm to weight the data more. I belive the data in the markets is incredibky noisy and these short term strategy should weight the data more than the regularization. With this hyperparameter change I was able to create appropriate selling behavior during the extreme uptrend while allowing the algorithm to capitalize early on March 2020 market selloff.  Because the strategy was able to buy early during the selloff rather than waiting for new momemntum we were able to generate material outperformance.
+
+## The unlearned strategy Culm Return was 0.639679
+
+## 1  Baseline SVM Strategy 3 month training  -  Culm Ret 1.530086
 
 ![](images/svm_small_training_baseline.png)  
 
-##2
+## 2  SVM with 36 month training - Culm Ret 1.319838
 
-![](images/svm_80_20_training_baseline.png)  
+![](images/svm_larger_training_baseline.png)  
 
-##3
+## 4 SVM with 5/100 DMAC and 36 month training - Culm Ret 1.746931
 
-![](images/svm_golden_cross_dmac.png)  
+![](images/svm_5_100_dmac.png)  
 
-##4
+## 5 Logistic Regression 36 month - Culm Ret 1.488508
 
-![](images/svm_15_30_dmac.png)  
-
-##5
-
-![](images/lr_5_10_dmac.png)  
-
-##6
-
-![](images/svm_5_10_dmac.png)  
+![](images/lr_5_100_dmac.png)  
 
 
 
 
 
 
-Step 1: Tune the training algorithm by adjusting the size of the training dataset.
 
-To do so, slice your data into different periods. Rerun the notebook with the updated parameters, and record the results in your README.md file.
-
-Answer the following question: What impact resulted from increasing or decreasing the training window?
-
-There was a 
-Step 2: Tune the trading algorithm by adjusting the SMA input features.
-
-Adjust one or both of the windows for the algorithm. Rerun the notebook with the updated parameters, and record the results in your README.md file.
-
-Answer the following question: What impact resulted from increasing or decreasing either or both of the SMA windows?
-Step 3: Choose the set of parameters that best improved the trading algorithm returns.
-
-Save a PNG image of the cumulative product of the actual returns vs. the strategy returns, and document your conclusion in your README.md file.
